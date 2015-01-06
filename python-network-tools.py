@@ -1,35 +1,32 @@
-import sys
+import argparse
 import curl
 import resolve
- 
+
+
 def banner():
-	print "#################################"
-	print "##     python network tools    ##"
-	print "#################################"
- 
+    print "#################################"
+    print "##     python network tools    ##"
+    print "#################################"
+
+
 def usage():
-	print "How to use python network tools:"
-	print "--curl        - curl with pycurl lib"
-	print "--urllib_curl - curl with urllib2 lib"
- 
-	print "examples:"
-	print "curl.py --curl www.website.com"
-	print "curl.py --urllib_curl http:\\website.com"
-	
-	
-	
+    print "How to use python network tools:"
+    print "--curl        - curl with pycurl lib"
+    print "--urllib_curl - curl with urllib2 lib"
+
+    print "examples:"
+    print "curl.py --curl www.website.com"
+    print "curl.py --urllib_curl http:\\website.com"
+
+
 if __name__ == "__main__":
-	banner()    
-	if sys.argv[1] == "--curl":
-		print "curling website..."
-		curl.curl(sys.argv[2])
-	elif sys.argv[1] == "--urllib_curl":
-		print "curling website..."
-		curl.urllib_curl(sys.argv[2])
-	elif sys.argv[1] == "--mx":
-		print "MX record:"
-		resolve.mx_lookup(sys.argv[2])
-	elif sys.argv[1] == "--help":
-		usage()
-	else:
-		usage()
+    parser = argparse.ArgumentParser(description='Python Network Tools')
+    parser.add_argument('-c', help='Curl a provided URL with pycurl')
+    parser.add_argument('--urllibcurl', help='Curl a provided url with urllib')
+    args = parser.parse_args()
+    if args.c:
+        result = curl.curl(args.c)
+        print result
+    if args.urllibcurl:
+        result = curl.urllib_curl(args.urllibcurl)
+        print result
