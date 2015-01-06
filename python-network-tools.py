@@ -17,7 +17,7 @@ if __name__ == "__main__":
 	args = parser.parse_args()
 
 if args.curl:
-	result = curl.curl(args.c)
+	result = curl.curl(args.curl)
 	print result
 if args.urllibcurl:
 	result = curl.urllib_curl(args.urllibcurl)
