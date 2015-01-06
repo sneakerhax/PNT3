@@ -1,5 +1,6 @@
 import sys
 import curl
+import resolve
  
 def banner():
 	print "#################################"
@@ -7,7 +8,7 @@ def banner():
 	print "#################################"
  
 def usage():
-	print "How to use network curl:"
+	print "How to use python network tools:"
 	print "--curl        - curl with pycurl lib"
 	print "--urllib_curl - curl with urllib2 lib"
  
@@ -25,6 +26,9 @@ if __name__ == "__main__":
 	elif sys.argv[1] == "--urllib_curl":
 		print "curling website..."
 		curl.urllib_curl(sys.argv[2])
+	elif sys.argv[1] == "--mx":
+		print "MX record:"
+		resolve.mx_lookup(sys.argv[2])
 	elif sys.argv[1] == "--help":
 		usage()
 	else:
