@@ -10,8 +10,8 @@ def curl(website):
     c.perform()
     c.close()
     body = buffer.getvalue()
-    print(body)
+    return body
 
 def urllib_curl(website):
     body = urllib2.urlopen(website)
-    print body.read()
+    return body.read()
