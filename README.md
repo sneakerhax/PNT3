@@ -10,7 +10,7 @@ so I put them in one place as a reference and functional tool
 <b>Required libs<b>:
 
 <ul>
-<li>Pycurl</li> 
+<li>PycURL</li> 
 <li>dnspython</li>
 </ul>
 
