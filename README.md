@@ -11,5 +11,6 @@ so I put them in one place as a reference and functional tool
 
 <ul>
 <li>Pycurl</li> 
+<li>dnspython</li>
 </ul>
 
