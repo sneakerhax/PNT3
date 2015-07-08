@@ -1,6 +1,8 @@
 import argparse
-import curl
-import resolve
+import modules.resolve
+import modules.curl
+from modules import *
+
 
 
 def banner():
