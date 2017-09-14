@@ -7,7 +7,7 @@ from modules import *
 
 def banner():
     print "#################################"
-    print "##     python network tools    ##"
+    print "##     Python network tools    ##"
     print "#################################"
 
 if __name__ == "__main__":
@@ -18,7 +18,7 @@ if __name__ == "__main__":
 	parser.add_argument('--dnsresolve', help='resolve hostname')
 	parser.add_argument('--dnsreverse', help='reverse lookup')
 	args = parser.parse_args()
-	
+
 banner()
 if args.curl:
 	result = curl.curl(args.curl)
