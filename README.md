@@ -21,4 +21,4 @@ To install dependencies manually:
 
 To install with script:
 
-```bash install.sh```
+```bash install/install.sh```
