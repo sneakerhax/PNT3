@@ -1,10 +1,8 @@
 import threading
 import requests
 
-websites = 	["http://sneakerhax.com",
-		"http://thehonz.com", 
-		"http://google.com",  
-		"http://securitytube.net",
+websites = 	["http://sneakerhax.com", 
+		"http://google.com",
 		"http://hjkjhhhjjjjjj.net"]
 
 def status_code(site):
