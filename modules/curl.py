@@ -1,17 +1,12 @@
-import pycurl
-from StringIO import StringIO
-import urllib2
+import urllib.request
 
-def curl(website):
-    buffer = StringIO()
-    c = pycurl.Curl()
-    c.setopt(c.URL, website)
-    c.setopt(c.WRITEDATA, buffer)
-    c.perform()
-    c.close()
-    body = buffer.getvalue()
-    return body
 
-def urllib_curl(website):
-    body = urllib2.urlopen(website)
-    return body.read()
+def urllib_curl(host_list):
+    for host in host_list:
+        try:
+            response = urllib.request.urlopen(host)
+            print(host)
+            print(response.read())
+            print("\n")
+        except:
+            print("Unable to curl")

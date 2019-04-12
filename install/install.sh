@@ -1,2 +1,1 @@
-pip install pycurl
-pip install dnspython
+pip3 install dnspython3
