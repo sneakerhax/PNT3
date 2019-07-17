@@ -20,6 +20,9 @@ def resolve_hostname(host_list):
             print("[+] " + host + ": " + ip)
         except socket.error:
             print("[-] " + host + ": " + "Unable to resolve")
+        except:
+            print("[-] " + host + ": " + "Unable to read input")
+            pass
 
 
 # Reverse lookup
