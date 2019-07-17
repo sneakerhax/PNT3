@@ -19,6 +19,7 @@ def banner():
 
 
 def main():
+    banner()
     parser = argparse.ArgumentParser(description='Python Network Tools')
     parser.add_argument('--ucurl', action='store_true', help='Curl a provided URL with urllib must use http://')
     parser.add_argument('--mx', action='store_true', help='Lookup MX record')
@@ -27,7 +28,6 @@ def main():
     parser.add_argument('--targets', required=True, help='file to open')
     args = parser.parse_args()
 
-    banner()
     if args.ucurl:
         host_list = data.make_list_file(args.targets)
         curl.urllib_curl(host_list)
