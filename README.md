@@ -14,10 +14,4 @@ Note: Tools inside of the scripts folder are stand alone scripts
 
 ## Install:
 
-To install dependencies manually:
-
-```pip3 install dnspython3```
-
-To install with script:
-
-```bash install/install.sh```
+```pip3 install -r requirements.txt```
