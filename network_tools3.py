@@ -41,5 +41,6 @@ def main():
         ip_list = data.make_list_file(args.targets)
         resolve.reverse_lookup(ip_list)
 
+
 if __name__ == "__main__":
     main()
