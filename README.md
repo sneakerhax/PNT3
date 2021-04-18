@@ -21,3 +21,7 @@ Build Docker image
 ```docker run -it -v ${PWD}:/Python-Network-Tools python-network-tools --dnsresolve --target targets.txt```
 
 Run Docker container with target file
+
+```docker run -it --entrypoint /bin/bash python-network-tools```
+
+Run Docker container and drop into bash shell to use scripts
