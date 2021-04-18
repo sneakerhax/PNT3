@@ -11,3 +11,13 @@ Note: Tools inside of the scripts folder are stand alone scripts
 ## Install
 
 ```python3 -m pip install -r requirements.txt```
+
+## Running with Docker
+
+```docker build -t python-network-tools```
+
+Build Docker image
+
+```docker run -it -v ${PWD}:/Python-Network-Tools python-network-tools --dnsresolve --target targets.txt```
+
+Run Docker container with target file
