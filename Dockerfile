@@ -1,6 +1,6 @@
 FROM python:3
 
-COPY / /Python-Network-Tools
+COPY /network_tools3.py /modules /requirements.txt /scripts /Python-Network-Tools/
 WORKDIR /Python-Network-Tools
 RUN pip install -r requirements.txt
 
