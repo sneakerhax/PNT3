@@ -19,7 +19,7 @@ Note: Tools inside of the scripts folder are stand alone scripts
 
 Build Docker image
 
-```docker run -it -v ${PWD}/targets/txt:/targets python-network-tools --dnsresolve --target /targets```
+```docker run -it -v ${PWD}/targets/txt:/targets/targetst.txt python-network-tools --dnsresolve --target /targets/targets.txt```
 
 Run Docker container with target file
 
