@@ -1,4 +1,4 @@
-FROM python:3
+FROM python:3.8.8-slim-buster
 
 COPY / /Python-Network-Tools/
 WORKDIR /Python-Network-Tools
