@@ -1,8 +1,8 @@
-FROM python:3.8.8-slim-buster
+FROM python:alpine
 
 COPY / /Python-Network-Tools/
 WORKDIR /Python-Network-Tools
-RUN apt update && apt upgrade -y
+RUN apk -U upgrade
 RUN pip install -r requirements.txt
 
 ENTRYPOINT [ "python", "network_tools3.py" ]
