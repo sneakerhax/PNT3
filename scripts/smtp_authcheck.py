@@ -4,11 +4,8 @@ import smtplib
 
 
 def main(args):
-    try:
-        print(smtp_auth(args.server, args.port, args.username, args.password))
-    except:
-        print("\n")
-        usage()
+    print("[+] Checking Credentials")
+    print(smtp_auth(args.server, args.port, args.username, args.password))
 
 
 def banner():
@@ -32,6 +29,10 @@ def smtp_auth(server, port, username, password):
 
     except smtplib.SMTPAuthenticationError:
         return "Wrong username or password"
+
+    finally:
+        s.close()
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
