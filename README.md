@@ -13,16 +13,26 @@ Note: Tools inside of the scripts folder are stand alone scripts
 
 ```python3 -m pip install -r requirements.txt```
 
-## Running with Docker
+## Running with Docker (Local build)
 
 ```docker build -t python-network-tools```
 
-Build Docker image
+Build Docker image (locally)
 
 ```docker run -it -v ${PWD}/targets.txt:/targets/targets.txt python-network-tools --dnsresolve --target /targets/targets.txt```
 
 Run Docker container with target file
 
 ```docker run -it --entrypoint /bin/bash python-network-tools```
+
+Run Docker container and drop into bash shell to use scripts
+
+## Running with Docker (From Github Container Registry)
+
+```docker run -it -v ${PWD}/targets.txt:/targets/targets.txt ghcr.io/sneakerhax/python-network-tools:latest --dnsresolve --target /targets/targets.txt```
+
+Run Docker container with target file
+
+```docker run -it --entrypoint /bin/bash ghcr.io/sneakerhax/python-network-tools:latest```
 
 Run Docker container and drop into bash shell to use scripts
