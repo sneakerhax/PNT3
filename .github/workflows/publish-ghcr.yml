@@ -8,6 +8,8 @@ name: Publish to ghcr.io
 on:
   push:
     branches: [ main ]
+    paths-ignore:
+      - "**.md"
   pull_request:
     branches: [ main ]
   workflow_dispatch:
