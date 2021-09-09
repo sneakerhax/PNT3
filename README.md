@@ -15,24 +15,24 @@ Note: Tools inside of the scripts folder are stand alone scripts
 
 ## Running with Docker (Local build)
 
-```docker build -t python-network-tools```
+```docker build -t pnt3```
 
 Build Docker image (locally)
 
-```docker run -it -v ${PWD}/targets.txt:/targets/targets.txt python-network-tools --dnsresolve --target /targets/targets.txt```
+```docker run -it -v ${PWD}/targets.txt:/targets/targets.txt pnt3 --dnsresolve --target /targets/targets.txt```
 
 Run Docker container with target file
 
-```docker run -it --entrypoint /bin/bash python-network-tools```
+```docker run -it --entrypoint /bin/bash pnt3```
 
 Run Docker container and drop into bash shell to use scripts
 
 ## Running with Docker (From Github Container Registry)
 
-```docker run -it -v ${PWD}/targets.txt:/targets/targets.txt ghcr.io/sneakerhax/python-network-tools:latest --dnsresolve --target /targets/targets.txt```
+```docker run -it -v ${PWD}/targets.txt:/targets/targets.txt ghcr.io/sneakerhax/pnt3:latest --dnsresolve --target /targets/targets.txt```
 
 Run Docker container with target file
 
-```docker run -it --entrypoint /bin/bash ghcr.io/sneakerhax/python-network-tools:latest```
+```docker run -it --entrypoint /bin/bash ghcr.io/sneakerhax/pnt3:latest```
 
 Run Docker container and drop into bash shell to use scripts
