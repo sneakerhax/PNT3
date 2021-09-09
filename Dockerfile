@@ -5,4 +5,4 @@ WORKDIR /Python-Network-Tools
 RUN apk -U upgrade
 RUN pip install -r requirements.txt
 
-ENTRYPOINT [ "python", "network_tools3.py" ]
+ENTRYPOINT [ "python", "pnt3.py" ]
