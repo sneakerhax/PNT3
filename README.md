@@ -1,4 +1,4 @@
-# Python-Network-Tools
+# Python Network Tools
 
 This tool is intended to be a modularized set of scripts to perform network functions in Python3.
 I found myself having to repeatedly look up how to perform certain Python functions related to networking
