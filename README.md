@@ -23,7 +23,7 @@ Build Docker image (locally)
 
 Run Docker container with target file
 
-```docker run -it --entrypoint /bin/bash pnt3```
+```docker run -it --entrypoint sh pnt3```
 
 Run Docker container and drop into bash shell to use scripts
 
@@ -33,6 +33,16 @@ Run Docker container and drop into bash shell to use scripts
 
 Run Docker container with target file
 
-```docker run -it --entrypoint /bin/bash ghcr.io/sneakerhax/pnt3:latest```
+```docker run -it --entrypoint sh ghcr.io/sneakerhax/pnt3:latest```
+
+Run Docker container and drop into bash shell to use scripts
+
+## Running with Docker (From Docker Hub)
+
+```docker run -it -v ${PWD}/targets.txt:/targets/targets.txt sneakerhax/pnt3:latest --dnsresolve --target /targets/targets.txt```
+
+Run Docker container with target file
+
+```docker run -it --entrypoint sh sneakerhax/pnt3:latest```
 
 Run Docker container and drop into bash shell to use scripts
