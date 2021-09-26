@@ -37,7 +37,7 @@ Run Docker container with target file
 
 Run Docker container and drop into bash shell to use scripts
 
-## Running with Docker (From Docker Hub)
+## Running with Docker (Docker Hub)
 
 ```docker run -it -v ${PWD}/targets.txt:/targets/targets.txt sneakerhax/pnt3:latest --dnsresolve --target /targets/targets.txt```
 
