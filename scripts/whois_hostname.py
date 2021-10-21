@@ -16,6 +16,6 @@ with open(whois_list, 'r') as f:
 for site in site_list:
     who = whois.query(site)
     if who:
-        print("name: " + who.name + "org:" + name.org)
+        print("name: " + who.name + " " + "registar: " + who.registrar)
         print("--------------------------------------------------------------")
         time.sleep(3)
