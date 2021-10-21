@@ -16,19 +16,26 @@ def banner():
 
 
 def usage():
-    print("Usage: python smtp_authcheck.py --server <mail server> --port <SMTP port> --username <username> --password <password>")
+    print("Usage: python smtp_authcheck.py --server <mail server> --port <SMTP port> --username <username> --password <password> [--start-tls]")
 
 
 def smtp_auth(server, port, username, password):
+    print("[+] Attempting to connect to server")
     s = smtplib.SMTP(server, port)
-    s.starttls()
+    #s.starttls()
+    if args.starttls:
+        print("[+] Attempting to use STARTTLS")
+        s.starttls()
 
-    try:
+    print("[+] Attempting to say ehlo")
+    s.ehlo()
+    
+    try:       
         s.login(username, password)
         return "Authentication successful"
-
-    except smtplib.SMTPAuthenticationError:
-        return "Wrong username or password"
+    
+    except:
+        sys.exit("Wrong username or password")
 
     finally:
         s.close()
@@ -40,7 +47,7 @@ if __name__ == '__main__':
     parser.add_argument("--port", action="store", dest='port', help="server port", type=int)
     parser.add_argument("--username", action="store", dest='username', help="username")
     parser.add_argument("--password", action="store", dest='password', help="password")
-
+    parser.add_argument('--start-tls', action='store_true', dest='starttls', help='run using STARTTLS')
     args = parser.parse_args()
     banner()
     main(args)
