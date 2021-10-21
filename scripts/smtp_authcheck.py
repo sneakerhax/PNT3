@@ -39,11 +39,11 @@ def smtp_auth(server, port, username, password):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--server", required=True, action="store", dest='server', help="server address")
-    parser.add_argument("--port", required=True, action="store", dest='port', help="server port", type=int)
-    parser.add_argument("--username", required=True, action="store", dest='username', help="username")
-    parser.add_argument("--password", required=True, action="store", dest='password', help="password")
-    parser.add_argument('--start-tls', action='store_true', dest='starttls', help='run using STARTTLS')
+    parser.add_argument("-s", "--server", required=True, action="store", dest='server', help="server address")
+    parser.add_argument("-p", "--port", required=True, action="store", dest='port', help="server port", type=int)
+    parser.add_argument("-u", "--username", required=True, action="store", dest='username', help="username")
+    parser.add_argument("-c", "--password", required=True, action="store", dest='password', help="password")
+    parser.add_argument("-stls", '--start-tls', action='store_true', dest='starttls', help='run using STARTTLS')
     args = parser.parse_args()
     banner()
     main(args)
