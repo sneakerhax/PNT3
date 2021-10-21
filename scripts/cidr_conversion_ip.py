@@ -2,7 +2,7 @@ from netaddr import IPNetwork
 import sys
 
 # requires: netaddr
-# install: pip3 install netaddr
+# install: python3 -m pip install netaddr
 
 ip_list = sys.argv[1]
 cidr_list = []

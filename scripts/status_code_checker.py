@@ -2,7 +2,7 @@ import threading
 import requests
 
 # requires: requests
-# install: pip3 install requests
+# install: python3 -m pip install requests
 
 websites = ["http://example.com"]
 
