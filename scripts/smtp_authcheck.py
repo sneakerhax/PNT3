@@ -15,10 +15,6 @@ def banner():
     print("#################################")
 
 
-def usage():
-    print("Usage: python smtp_authcheck.py --server <mail server> --port <SMTP port> --username <username> --password <password> [--start-tls]")
-
-
 def smtp_auth(server, port, username, password):
     print("[+] Attempting to connect to server")
     s = smtplib.SMTP(server, port)
