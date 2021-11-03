@@ -11,38 +11,54 @@ Note: Tools inside of the scripts folder are stand alone scripts
 
 ## Install
 
-```python3 -m pip install -r requirements.txt```
+```
+python3 -m pip install -r requirements.txt
+```
 
 ## Running with Docker (Local build)
 
-```docker build -t pnt3```
+```
+docker build -t pnt3
+```
 
 Build Docker image (locally)
 
-```docker run -it -v ${PWD}/targets.txt:/targets/targets.txt pnt3 --dnsresolve --target /targets/targets.txt```
+```
+docker run -it -v ${PWD}/targets.txt:/targets/targets.txt pnt3 --dnsresolve --target /targets/targets.txt
+```
 
 Run Docker container with target file
 
-```docker run -it --entrypoint sh pnt3```
+```
+docker run -it --entrypoint sh pnt3
+```
 
 Run Docker container and drop into bash shell to use scripts
 
 ## Running with Docker (From Github Container Registry)
 
-```docker run -it -v ${PWD}/targets.txt:/targets/targets.txt ghcr.io/sneakerhax/pnt3:latest --dnsresolve --target /targets/targets.txt```
+```
+docker run -it -v ${PWD}/targets.txt:/targets/targets.txt ghcr.io/sneakerhax/pnt3:latest --dnsresolve --target /targets/targets.txt
+```
 
 Run Docker container with target file
 
-```docker run -it --entrypoint sh ghcr.io/sneakerhax/pnt3:latest```
+```
+docker run -it --entrypoint sh ghcr.io/sneakerhax/pnt3:latest
+```
 
 Run Docker container and drop into bash shell to use scripts
 
 ## Running with Docker (Docker Hub)
 
-```docker run -it -v ${PWD}/targets.txt:/targets/targets.txt sneakerhax/pnt3:latest --dnsresolve --target /targets/targets.txt```
+```
+docker run -it -v ${PWD}/targets.txt:/targets/targets.txt sneakerhax/pnt3:latest --dnsresolve --target /targets/targets.txt
+```
 
 Run Docker container with target file
 
-```docker run -it --entrypoint sh sneakerhax/pnt3:latest```
+```
+docker run -it --entrypoint sh sneakerhax/pnt3:latest
+```
 
 Run Docker container and drop into bash shell to use scripts
