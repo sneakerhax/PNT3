@@ -1,10 +1,10 @@
-import whois as whois2
+import whois
 
 
 def get_whois_org(host_list):
     for host in host_list:
         try:
-            w = whois2.whois(host)
+            w = whois.whois(host)
             print("[+] Whois data for " + str(host) + ":")
             print("Org: " + w.org)
             print("Country: " + w.country)
