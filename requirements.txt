@@ -1,4 +1,4 @@
 dnspython3
 netaddr
 requests
-whois
+python-whois

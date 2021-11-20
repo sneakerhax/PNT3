@@ -15,7 +15,7 @@ def port_scanner(target, ports):
             if banner:
                 print("[+] Port " + str(port) + " open [+] \n" + banner)
                 s.close()
-        except:
+        except Exception as e:
             pass
 
 
@@ -26,6 +26,7 @@ def main():
         port_scanner(target, ports)
     else:
         print(usage)
+
 
 if __name__ == "__main__":
     main()

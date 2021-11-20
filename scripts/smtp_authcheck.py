@@ -30,7 +30,7 @@ def smtp_auth(server, port, username, password):
         s.login(username, password)
         return "Authentication successful"
 
-    except:
+    except Exception as e:
         sys.exit("Wrong username or password")
 
     finally:

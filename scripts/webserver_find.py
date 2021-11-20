@@ -20,7 +20,7 @@ def http_check(url, i):
         site = url + ":" + str(i) + "/"
         s = requests.get(site, timeout=2)
         print("[+] " + site + " " + "Server: " + str(s.headers['server']) + " " + str(s.status_code))
-    except:
+    except Exception as e:
         pass
 
 
@@ -40,6 +40,7 @@ def main():
         start(url, r)
     else:
         print(usage)
+
 
 if __name__ == "__main__":
     main()

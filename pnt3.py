@@ -1,9 +1,10 @@
 import argparse
-import modules.data
-import modules.resolve
-import modules.curl
-from modules import *
-import sys
+import modules.data as data
+import modules.resolve as resolve
+import modules.curl as curl
+import modules.whois as whois
+# from modules import *
+# import sys
 
 
 def banner():
@@ -25,6 +26,7 @@ def main():
     parser.add_argument('--mx', action='store_true', help='Lookup MX record')
     parser.add_argument('--dnsresolve', action='store_true', help='resolve hostname')
     parser.add_argument('--dnsreverse', action='store_true', help='reverse lookup')
+    parser.add_argument('--whois', action="store_true", help="whois lookup")
     parser.add_argument('--targets', required=True, help='file to open')
     args = parser.parse_args()
 
@@ -40,6 +42,9 @@ def main():
     if args.dnsreverse:
         ip_list = data.make_list_file(args.targets)
         resolve.reverse_lookup(ip_list)
+    if args.whois:
+        host_list = data.make_list_file(args.targets)
+        whois.get_whois_org(host_list)
 
 
 if __name__ == "__main__":

@@ -8,7 +8,7 @@ def mx_lookup(host_list):
         try:
             for result in dns.resolver.query(host, 'MX'):
                 print("[+] " + host + ": " + result.to_text())
-        except:
+        except Exception as e:
             print("[-] " + host + ": " + "Unable to resolve")
 
 
@@ -20,7 +20,7 @@ def resolve_hostname(host_list):
             print("[+] " + host + ": " + ip)
         except socket.error:
             print("[-] " + host + ": " + "Unable to resolve")
-        except:
+        except Exception as e:
             print("[-] " + host + ": " + "Unable to read input")
             pass
 

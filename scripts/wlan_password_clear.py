@@ -9,8 +9,9 @@ def wlanclear(ssid):
     results = os.system(cmd)
     return results
 
+
 if len(sys.argv) == 2:
-        ssid = sys.argv[1]
-        wlanclear(ssid)
+    ssid = sys.argv[1]
+    wlanclear(ssid)
 else:
     print(usage)

@@ -14,6 +14,7 @@ def status_code(site):
     except requests.exceptions.ConnectionError as e:
         print("[*] " + site + " " + str(e[0][0]))
 
+
 for site in websites:
     t = threading.Thread(target=status_code, args=(site,))
     t.start()
