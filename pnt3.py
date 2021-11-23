@@ -3,8 +3,6 @@ import modules.data as data
 import modules.resolve as resolve
 import modules.curl as curl
 import modules.whois as whois
-# from modules import *
-# import sys
 
 
 def banner():
