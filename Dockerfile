@@ -1,4 +1,4 @@
-FROM python:alpine
+FROM python:3.11.0a5-alpine3.15
 
 COPY / /Python-Network-Tools/
 WORKDIR /Python-Network-Tools
