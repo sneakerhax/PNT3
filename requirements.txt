@@ -2,3 +2,4 @@ dnspython3
 netaddr
 requests
 python-whois
+beautifulsoup4
