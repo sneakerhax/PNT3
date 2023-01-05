@@ -1,6 +1,8 @@
 import os
 import sys
 
+# Works on Windows system only
+
 usage = "usage: wlan_password_clear.py <ssid>"
 
 
