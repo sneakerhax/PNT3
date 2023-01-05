@@ -9,6 +9,8 @@ chrome_url = "https://www.useragentstring.com/pages/useragentstring.php?name=chr
 firefox_url = "https://www.useragentstring.com/pages/useragentstring.php?name=firefox"
 ie_url = "http://www.useragentstring.com/pages/useragentstring.php?name=Internet+Explorer"
 
+header = "'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.47 Safari/537.36'"
+
 usage = """usage: user_agents.py <user_agent_type>
 
 available agent lists:
@@ -27,14 +29,8 @@ def banner():
 
 
 def user_agents(url):
-    req = urllib.request.Request(
-        url,
-        data=None,
-        headers={
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.47 Safari/537.36'
-        }
-    )
-
+    req = urllib.request.Request(url)
+    req.add_header('User-Agent', header)
     url = urllib.request.urlopen(req)
     soup = BeautifulSoup(url, features="html.parser")
     agents = soup.body.findAll('a')
@@ -62,7 +58,8 @@ def main():
             if agent_type == "chrome":
                 user_agents(chrome_url)
         except Exception as e:
-            print("[-] Error getting user agent list")
+            print("[-] Error getting user agent list", e)
+
     else:
         print(usage)
 
