@@ -54,7 +54,7 @@ def main():
         try:
             agent_type = sys.argv[1]
             banner()
-            print("[+] Getting user agent list:")
+            print("[+] Downloading user agent list:")
             if agent_type == "ie":
                 user_agents(ie_url)
             if agent_type == "firefox":
