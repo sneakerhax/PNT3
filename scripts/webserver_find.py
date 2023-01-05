@@ -9,10 +9,10 @@ usage = "usage: servercheck.py <http://url> <ports>"
 
 
 def banner():
-    print("+---------------------------------+")
-    print("|         Web Server Check        |")
-    print("+---------------------------------+")
-    print("")
+    print("#################################")
+    print("#       webserver_find.py       #")
+    print("#        by: sneakerhax         #")
+    print("#################################")
 
 
 def http_check(url, i):
