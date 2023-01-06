@@ -3,11 +3,6 @@ import sys
 import smtplib
 
 
-def main(args):
-    print("[+] Checking Credentials")
-    print(smtp_auth(args.server, args.port, args.username, args.password))
-
-
 def banner():
     print("#################################")
     print("#       smtp_authcheck.py       #")
@@ -15,9 +10,9 @@ def banner():
     print("#################################")
 
 
-def smtp_auth(server, port, username, password):
+def smtp_auth(args):
     print("[+] Attempting to connect to server")
-    s = smtplib.SMTP(server, port)
+    s = smtplib.SMTP(args.server, args.port)
     # Attempt to start TLS connection s.starttls()
     if args.starttls:
         print("[+] Attempting to use STARTTLS")
@@ -27,7 +22,7 @@ def smtp_auth(server, port, username, password):
     s.ehlo()
 
     try:
-        s.login(username, password)
+        s.login(args.username, args.password)
         return "Authentication successful"
 
     except Exception as e:
@@ -37,7 +32,7 @@ def smtp_auth(server, port, username, password):
         s.close()
 
 
-if __name__ == '__main__':
+def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-s", "--server", required=True, action="store", dest='server', help="server address")
     parser.add_argument("-p", "--port", required=True, action="store", dest='port', help="server port", type=int)
@@ -46,4 +41,9 @@ if __name__ == '__main__':
     parser.add_argument("-stls", '--start-tls', action='store_true', dest='starttls', help='run using STARTTLS')
     args = parser.parse_args()
     banner()
-    main(args)
+    print("[+] Checking Credentials")
+    print(smtp_auth(args))
+
+
+if __name__ == '__main__':
+    main()
