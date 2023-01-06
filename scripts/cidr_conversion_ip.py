@@ -11,7 +11,7 @@ cidr_list = []
 
 def banner():
     print("#################################")
-    print("#       cidr_conversion_ip.py   #")
+    print("#     cidr_conversion_ip.py     #")
     print("#        by: sneakerhax         #")
     print("#################################")
     print("")
