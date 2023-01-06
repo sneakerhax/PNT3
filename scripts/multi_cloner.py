@@ -5,10 +5,10 @@ usage = "[*] Usage: python3 multi_cloner.py <repo_list>"
 
 
 def banner():
-    print("#################################")
-    print("#       multi_cloner.py         #")
-    print("#        by: sneakerhax         #")
-    print("#################################")
+    print("###############################")
+    print("#       multi_cloner.py       #")
+    print("#        by: sneakerhax       #")
+    print("###############################")
     print("")
 
 

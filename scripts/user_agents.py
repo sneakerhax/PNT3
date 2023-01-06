@@ -21,10 +21,10 @@ available agent lists:
 
 
 def banner():
-    print("#################################")
-    print("#       user_agents.py          #")
-    print("#       by: sneakerhax          #")
-    print("#################################")
+    print("##############################")
+    print("#       user_agents.py       #")
+    print("#       by: sneakerhax       #")
+    print("##############################")
     print("")
 
 
