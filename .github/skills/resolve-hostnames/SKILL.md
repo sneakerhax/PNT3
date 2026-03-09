@@ -1,11 +1,11 @@
 ---
 name: resolve-hostnames
-description: Resolve hostnames from targets.txt and identify live targets when DNS resolution returns an IP address.
+description: Resolve hostnames from targets.txt and identify live targets when DNS resolution returns an IP address. Use for dns resolve, hostname resolution, and live host validation requests.
 ---
 
 # Resolve Hostnames
 
-Use this skill when the user wants to identify live targets by DNS resolution.
+Use this skill when the user asks to resolve hostnames, validate live hosts from DNS, or check whether hostnames map to IP addresses.
 
 ## Command
 
