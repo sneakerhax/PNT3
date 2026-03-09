@@ -24,7 +24,7 @@ docker build -t pnt3
 Build Docker image (locally)
 
 ```
-docker run -it -v ${PWD}/targets.txt:/targets/targets.txt pnt3 --dnsresolve --target /targets/targets.txt
+docker run -it -v $(pwd)/targets.txt:/targets/targets.txt pnt3 --dnsresolve --target /targets/targets.txt
 ```
 
 Run Docker container with target file
@@ -38,7 +38,7 @@ Run Docker container and drop into bash shell to use scripts
 ## Running with Docker (From Github Container Registry)
 
 ```
-docker run -it -v ${PWD}/targets.txt:/targets/targets.txt ghcr.io/sneakerhax/pnt3:latest --dnsresolve --target /targets/targets.txt
+docker run -it -v $(pwd)/targets.txt:/targets/targets.txt ghcr.io/sneakerhax/pnt3:latest --dnsresolve --target /targets/targets.txt
 ```
 
 Run Docker container with target file
@@ -52,7 +52,7 @@ Run Docker container and drop into bash shell to use scripts
 ## Running with Docker (Docker Hub)
 
 ```
-docker run -it -v ${PWD}/targets.txt:/targets/targets.txt sneakerhax/pnt3:latest --dnsresolve --target /targets/targets.txt
+docker run -it -v $(pwd)/targets.txt:/targets/targets.txt sneakerhax/pnt3:latest --dnsresolve --target /targets/targets.txt
 ```
 
 Run Docker container with target file
