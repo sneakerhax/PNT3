@@ -10,7 +10,7 @@ Use this skill when the user asks to resolve hostnames, validate live hosts from
 ## Command
 
 ```bash
-docker run -it -v $(pwd)/targets.txt:/targets/targets.txt pnt3 --dnsresolve --target /targets/targets.txt
+docker run -it -v $(pwd)/targets.txt:/targets/targets.txt sneakerhax/pnt3 --dnsresolve --target /targets/targets.txt
 ```
 
 ## Interpretation

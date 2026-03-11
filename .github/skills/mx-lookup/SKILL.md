@@ -10,7 +10,7 @@ Use this skill when the user asks to check MX records, mail exchanger entries, o
 ## Command
 
 ```bash
-docker run -it -v $(pwd)/targets.txt:/targets/targets.txt pnt3 --mxlookup --target /targets/targets.txt
+docker run -it -v $(pwd)/targets.txt:/targets/targets.txt sneakerhax/pnt3 --mx --target /targets/targets.txt
 ```
 
 ## Interpretation

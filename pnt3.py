@@ -23,19 +23,20 @@ def main():
     banner()
     parser = argparse.ArgumentParser(description='Python Network Tools')
     parser.add_argument('--ucurl', action='store_true', help='Curl a provided URL with urllib must use http://')
-    parser.add_argument('--mx', action='store_true', help='Lookup MX record')
+    parser.add_argument('--mxlookup', action='store_true', help='Lookup MX record')
     parser.add_argument('--dnsresolve', action='store_true', help='resolve hostname')
     parser.add_argument('--dnsreverse', action='store_true', help='reverse lookup')
     parser.add_argument('--whois', action="store_true", help="whois lookup")
     parser.add_argument('--targets', required=True, help='file to open')
+    parser.add_argument('--debug', action='store_true', help='Print debug information')
     args = parser.parse_args()
 
     if args.ucurl:
         host_list = data.make_list_file(args.targets)
         curl.urllib_curl(host_list)
-    if args.mx:
-        host_list = data.make_list_file(args.targets)
-        resolve.mx_lookup(host_list)
+    if args.mxlookup:
+        host_list = data.make_list_file(args.targets,)
+        resolve.mx_lookup(host_list, args.debug)
     if args.dnsresolve:
         host_list = data.make_list_file(args.targets)
         resolve.resolve_hostname(host_list)
