@@ -17,3 +17,4 @@ docker run -it -v $(pwd)/targets.txt:/targets/targets.txt sneakerhax/pnt3 --dnsr
 
 - If a host resolves to an IP address, treat it as a live target.
 - If a host does not resolve, treat it as not live.
+- Always output the results as a table with columns for Hostname, Resolved IP, and Status (Live/Not Live).

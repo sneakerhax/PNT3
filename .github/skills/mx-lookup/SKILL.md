@@ -17,3 +17,4 @@ docker run -it -v $(pwd)/targets.txt:/targets/targets.txt sneakerhax/pnt3 --mx -
 
 - If a domain returns one or more MX records, treat mail delivery as configured for that target.
 - If a domain returns no MX records, report that no MX configuration was found.
+- Always output the results as a table with columns for Domain, MX Records, and Status (Configured/Not Configured).
