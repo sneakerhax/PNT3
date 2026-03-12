@@ -21,31 +21,37 @@ def mx_lookup(host_list, debug):
             if debug:
                 print("[-] " + host + ": " + "Error, " + str(e))
             else:
-                print("[-] " + host + ": " + "Error resolving" )
+                print("[-] " + host + ": " + "Unexpected error resolving MX record")
             pass
 
 
 # DNS lookup
-def resolve_hostname(host_list):
+def resolve_hostname(host_list, debug):
     for host in host_list:
         try:
             ip = socket.gethostbyname(host)
             print("[+] " + host + ": " + ip)
-        except socket.error:
+        except socket.gaierror:
             print("[-] " + host + ": " + "No A record discovered")
         except Exception as e:
-            print("[-] " + host + ": " + "Error: " + str(e))
+            if debug:
+                print("[-] " + host + ": " + "Error: " + str(e))
+            else:
+                print("[-] " + host + ": " + "Unexpected error resolving hostname")
             pass
 
 
 # Reverse lookup
-def reverse_lookup(ip_list):
+def reverse_lookup(ip_list, debug):
     for ip in ip_list:
         try:
             hostname = socket.gethostbyaddr(ip)
             print("[+] " + str(ip) + ": " + str(hostname[0]))
-        except socket.error:
-            print("[-] " + ip + ": " + "No hostname record discovered")
+        except socket.herror:
+            print("[-] " + ip + ": " + "Reverse lookup failed")
         except Exception as e:
-            print("[-] " + ip + ": " + "Error: " + str(e))
+            if debug:
+                print("[-] " + ip + ": " + "Error: " + str(e))
+            else:
+                print("[-] " + ip + ": " + "Unexpected error during reverse lookup")
             pass

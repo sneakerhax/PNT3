@@ -35,14 +35,14 @@ def main():
         host_list = data.make_list_file(args.targets)
         curl.urllib_curl(host_list)
     if args.mxlookup:
-        host_list = data.make_list_file(args.targets,)
+        host_list = data.make_list_file(args.targets)
         resolve.mx_lookup(host_list, args.debug)
     if args.dnsresolve:
         host_list = data.make_list_file(args.targets)
-        resolve.resolve_hostname(host_list)
+        resolve.resolve_hostname(host_list, args.debug)
     if args.dnsreverse:
         ip_list = data.make_list_file(args.targets)
-        resolve.reverse_lookup(ip_list)
+        resolve.reverse_lookup(ip_list, args.debug)
     if args.whois:
         host_list = data.make_list_file(args.targets)
         whois.get_whois_org(host_list)
